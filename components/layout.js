@@ -1,8 +1,12 @@
+import Head from "next/head";
 
-export default function Layout({children}) {
+export default function Layout({children, title = '', description = ''}) {
     return (
         <>
-            <h1>Layout</h1>
+            <Head>
+                <title>{`GuitarLa - ${title}`}</title>
+                <meta  name="description" content={description}/>
+            </Head>
             {children}
         </>
     )
