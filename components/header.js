@@ -27,14 +27,14 @@ export default function Header() {
                             Nosotros
                         </a>
                     </Link>
-                    <Link href={'/blog'}>
-                        <a className={ router.pathname === '/blog' ? styles.active : ''}>
-                            Blog
-                        </a>
-                    </Link>
                     <Link href={'/tienda'}>
                         <a className={ router.pathname === '/tienda' ? styles.active : ''}>
                             Tienda
+                        </a>
+                    </Link>
+                    <Link href={'/blog'}>
+                        <a className={ router.pathname === '/blog' ? styles.active : ''}>
+                            Blog
                         </a>
                     </Link>
                 </nav>
