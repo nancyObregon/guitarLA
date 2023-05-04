@@ -1,10 +1,10 @@
 import Link from "next/link"
+import Layout from "../components/layout"
 
 export default function Nosotros() {
     return (
-        <div>
+        <Layout>
             <Link href="/">Ir a inicio</Link>
-
-        </div>
+        </Layout>
     )
 }
