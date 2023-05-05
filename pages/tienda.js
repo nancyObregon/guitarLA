@@ -1,7 +1,7 @@
 import Layout from "../components/layout"
+import Guitarra from "../components/guitarra"
 
 export default function Tienda({guitarras}) {
-    console.log(guitarras)
     return (
         <Layout
             title={"Tienda virtual"}
@@ -11,13 +11,32 @@ export default function Tienda({guitarras}) {
                 <h1 className="heading">
                     Nuestra Colección
                 </h1>
+                {guitarras.map(guitarra => (
+                    <Guitarra
+                        key={guitarra.id}
+                        guitarra={guitarra.attributes}
+                    />
+                ))}
             </main>
         </Layout>
     )
 }
 
-export async function getStaticProps(){
-    const respuesta = await fetch(`http://127.0.0.1:1337/api/guitarras?populate=imagen`)
+//Necesita un rebuild para cargar nueva informacion / Informacion Estatica
+// export async function getStaticProps(){
+//     const respuesta = await fetch(`${process.env.API_URL}/guitarras?populate=imagen`)
+//     const {data: guitarras} = await respuesta.json()
+
+//     return {
+//         props: {
+//             guitarras
+//         }
+//     }
+// }
+
+// Mostrara la informacion en vivo no necesita de un rebuild 
+export async function getServerSideProps(){
+    const respuesta = await fetch(`${process.env.API_URL}/guitarras?populate=imagen`)
     const {data: guitarras} = await respuesta.json()
 
     return {
