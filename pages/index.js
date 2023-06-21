@@ -8,7 +8,7 @@ export default function Home({}) {
       title={"Inicio"}
       description="Blog de música, venta de guitarras y más"
     >
-      <h1>Hola</h1>
+      <h1>Hola Equipo</h1>
       <Link href={"/nosotros"}>Nosotros</Link>
     </Layout>
   )
