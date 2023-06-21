@@ -12,14 +12,6 @@ export default function Tienda({guitarras}) {
                 <h1 className="heading">
                     Nuestra Colección
                 </h1>
-                <div className={styles.grid}>
-                    {guitarras.map(guitarra => (
-                        <Guitarra
-                            key={guitarra.id}
-                            guitarra={guitarra.attributes}
-                        />
-                    ))}
-                </div>
             </main>
         </Layout>
     )
@@ -38,13 +30,13 @@ export default function Tienda({guitarras}) {
 // }
 
 // Mostrara la informacion en vivo no necesita de un rebuild 
-export async function getServerSideProps(){
-    const respuesta = await fetch(`${process.env.API_URL}/guitarras?populate=imagen`)
-    const {data: guitarras} = await respuesta.json()
+// export async function getServerSideProps(){
+//     const respuesta = await fetch(`${process.env.API_URL}/guitarras?populate=imagen`)
+//     const {data: guitarras} = await respuesta.json()
 
-    return {
-        props: {
-            guitarras
-        }
-    }
-}
+//     return {
+//         props: {
+//             guitarras
+//         }
+//     }
+// }
